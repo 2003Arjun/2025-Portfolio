@@ -15,7 +15,6 @@ export const ContactSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
     setTimeout(() => {
@@ -51,13 +50,14 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium">Email</h4>
                   <a
-                    href="mailto:Demo@email.com"
+                    href="mailto:your@email.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@gmail.com
+                    your@email.com
                   </a>
                 </div>
               </div>
+
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Phone className="h-6 w-6 text-primary" />
@@ -65,22 +65,23 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium">Phone</h4>
                   <a
-                    href="tel:+11234567890"
+                    href="tel:+911234567890"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     +91 123 456 7890
                   </a>
                 </div>
               </div>
+
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <span className="text-muted-foreground hover:text-primary transition-colors">
+                  <a className="text-muted-foreground hover:text-primary transition-colors">
                     Karnataka, India
-                  </span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -99,13 +100,17 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
+          <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
 
-            <form className="space-y-6">
+            <form
+              className="space-y-6"
+              action="https://formsubmit.co/darksniper0050@gmail.com"
+              method="POST"
+              onSubmit={handleSubmit}
+            >
+              <input type="hidden" name="_captcha" value="false" />
+
               <div>
                 <label
                   htmlFor="name"
@@ -173,3 +178,4 @@ export const ContactSection = () => {
     </section>
   );
 };
+// This code defines a ContactSection component that allows users to send messages.
